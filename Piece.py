@@ -173,29 +173,6 @@ class Knight(Piece):
         return _moves
 
     def get_valid_piece_moves(self, game_state):
-        # _moves = []# self._moves.clear()
-        # current_square_row = self.row_number  # The integer row value of the starting square
-        # current_square_col = self.col_number  # The integer col value of the starting square
-        #
-        # row_change = [-2, -2, -1, -1, +1, +1, +2, +2]
-        # col_change = [-1, +1, -2, +2, -2, +2, +1, -1]
-        #
-        # for i in range(0, 8):
-        #     new_row = current_square_row + row_change[i]
-        #     new_col = current_square_col + col_change[i]
-        #     evaluating_square = board.get_piece(new_row, new_col)
-        #     # when the square with new_row and new_col is empty
-        #     if evaluating_square == Player.EMPTY:
-        #         _moves.append((new_row, new_col))
-        #     # when the square with new_row and new_col contains a valid piece
-        #     if board.is_valid_piece(new_row, new_col):
-        #         # when the knight is white and the piece near the king is black
-        #         if self.is_player(Player.PLAYER_1) and evaluating_square.is_player(Player.PLAYER_2):
-        #             _moves.append((new_row, new_col))
-        #         # when the knight is black and the piece near the king is white
-        #         elif self.is_player(Player.PLAYER_2) and evaluating_square.is_player(Player.PLAYER_1):
-        #             _moves.append((new_row, new_col))
-        # return _moves
         return self.get_valid_peaceful_moves(game_state) + self.get_valid_piece_takes(game_state)
 # Bishop
 class Bishop(Piece):
